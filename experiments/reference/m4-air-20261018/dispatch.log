@@ -1,0 +1,10 @@
+=== ANE per-eval dispatch floor (trivial add kernel) ===
+surface bytes = channels * align64(spatial*2); timing only, evals checked
+  [1,64   ,1,1    ] logical=    128 B need=  4096 B alloc=   4096 B    129.40 us/eval (2000/2000 OK)
+  [1,256  ,1,1    ] logical=    512 B need= 16384 B alloc=  16384 B    153.88 us/eval (2000/2000 OK)
+  [1,768  ,1,1    ] logical=   1536 B need= 49152 B alloc=  49152 B    158.14 us/eval (2000/2000 OK)
+  [1,768  ,1,256  ] logical= 393216 B need=393216 B alloc= 393216 B    155.96 us/eval (1000/1000 OK)
+  [1,2048 ,1,256  ] logical=1048576 B need=1048576 B alloc=1048576 B    104.19 us/eval (500/500 OK)
+  [1,4096 ,1,256  ] logical=2097152 B need=2097152 B alloc=2097152 B    181.39 us/eval (200/200 OK)
+
+PASS (0 failing cases)

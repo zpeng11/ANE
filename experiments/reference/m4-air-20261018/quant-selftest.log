@@ -1,0 +1,25 @@
+int8_quant_probe self-test (no ANE calls)
+  int8 chunk at 64, payload at 128, size 144                 PASS
+  chunk magic 0xDEADBEEF                                     PASS
+  dtype=4, uint64 size=16, uint64 offset=128                 PASS
+  int8 payload intact                                        PASS
+  BLOB file header chunk count = 1 after first put           PASS
+  BLOB chunk count increments to 2 (second chunk at 192)     PASS
+  Q tie +0.5 rounds away                                     PASS
+  Q tie -0.5 rounds away                                     PASS
+  Q tie 2.5 rounds away                                      PASS
+  RNE counter sees even ties                                 PASS
+  odd zp tie +0.5: observed=6, specRNE=5                     PASS
+  int8 saturation clamps                                     PASS
+  dequantize (q-zp)*scale                                    PASS
+  zp=5 tie -3.5: add-before=2, add-after=1                   PASS
+  zp=-1 tie +0.5: add-before=-1, add-after=0                 PASS
+  axis passed as named input                                 PASS
+  axis not emitted as an attribute                           PASS
+  rank-1 scale is a const tensor                             PASS
+  quantize output dtype/shape                                PASS
+  DQ on int8 input with rank-1 token scale                   PASS
+  bowtie chain: Cin follows previous output, ends on Cin     PASS
+  square-then-wide chain: output allocation uses final Cout  PASS
+  mode 1 (int8W-fp16A) has no activation Q/DQ                PASS
+self-test: PASS

@@ -1,0 +1,134 @@
+[
+  {
+    "name": "build",
+    "command": [
+      "make",
+      "all"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "build.log",
+    "started_at": "2026-10-18T17:39:17.010255+08:00",
+    "duration_seconds": 0.389576
+  },
+  {
+    "name": "device",
+    "command": [
+      "./devinfo"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "device.log",
+    "started_at": "2026-10-18T17:39:17.400154+08:00",
+    "duration_seconds": 0.011921
+  },
+  {
+    "name": "quantization",
+    "command": [
+      "./int8_quant_probe",
+      "--json",
+      "--bench"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "quantization.log",
+    "started_at": "2026-10-18T17:39:17.412307+08:00",
+    "duration_seconds": 2.260494
+  },
+  {
+    "name": "weight-compression",
+    "command": [
+      "./constexpr_scale_probe",
+      "--json",
+      "--bench"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "weight-compression.log",
+    "started_at": "2026-10-18T17:39:19.673099+08:00",
+    "duration_seconds": 0.326416
+  },
+  {
+    "name": "multi-input",
+    "command": [
+      "./multi_input_test2"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "multi-input.log",
+    "started_at": "2026-10-18T17:39:19.999826+08:00",
+    "duration_seconds": 0.150275
+  },
+  {
+    "name": "multi-io",
+    "command": [
+      "./multi_io_gen"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "multi-io.log",
+    "started_at": "2026-10-18T17:39:20.150443+08:00",
+    "duration_seconds": 0.089991
+  },
+  {
+    "name": "static-shapes",
+    "command": [
+      "./shape_test"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "static-shapes.log",
+    "started_at": "2026-10-18T17:39:20.240771+08:00",
+    "duration_seconds": 0.387558
+  },
+  {
+    "name": "surface-sizes",
+    "command": [
+      "./shape_test2"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "surface-sizes.log",
+    "started_at": "2026-10-18T17:39:20.628595+08:00",
+    "duration_seconds": 0.090097
+  },
+  {
+    "name": "operator-survey",
+    "command": [
+      "./run_survey.sh",
+      "--csv",
+      "${EXPERIMENTS}/results/20261018-release/survey_results.csv",
+      "--results",
+      "${EXPERIMENTS}/results/20261018-release/survey",
+      "--layouts",
+      "align64"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "operator-survey.log",
+    "started_at": "2026-10-18T17:39:20.718998+08:00",
+    "duration_seconds": 4.377703
+  },
+  {
+    "name": "dispatch",
+    "command": [
+      "./dispatch_floor"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "dispatch.log",
+    "started_at": "2026-10-18T17:39:25.097000+08:00",
+    "duration_seconds": 1.419103
+  },
+  {
+    "name": "dispatch-mapping",
+    "command": [
+      "./dispatch_floor2"
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "log": "dispatch-mapping.log",
+    "started_at": "2026-10-18T17:39:26.516436+08:00",
+    "duration_seconds": 2.005419
+  }
+]

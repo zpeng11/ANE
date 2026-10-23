@@ -1,0 +1,4 @@
+=== sustained (performance-only): 16x conv 512ch sp64, 100 evals, block=50 ===
+block            ms/eval   TFLOPS
+0                 0.240 ms    2.24
+1                 0.208 ms    2.59

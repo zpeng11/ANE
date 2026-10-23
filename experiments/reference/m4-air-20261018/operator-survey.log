@@ -1,0 +1,10 @@
+run_survey: 76 cases -> ${EXPERIMENTS}/results/20261018-release/survey_results.csv
+run_survey: raw errors -> ${EXPERIMENTS}/results/20261018-release/survey/survey_errors.log
+run_survey: stdout -> ${EXPERIMENTS}/results/20261018-release/survey/stdout
+  COMPILE_FAIL,9
+  OK,67
+  numeric_fail=0
+  numeric_unverified=0
+  layout_candidate=0
+  infra_fail=0
+  exit=0

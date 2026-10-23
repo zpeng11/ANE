@@ -1,0 +1,16 @@
+declared shape [1,512,1,64] fp16: logical = 65536 bytes
+(requested = kIOSurfaceAllocSize; alloc = IOSurfaceGetAllocSize; no minimum size is assumed)
+
+  case                          logic in    req in  alloc in   req out alloc out     eval
+  input 0.5x, output exact         65536     32768     32768     65536     65536     FAIL
+      rejected: Error Domain=com.apple.appleneuralengine Code=8 "processRequest:model:qos:qIndex:modelStringID:options:returnValue:error:: ANEProgramProcessRequestDirect() Failed with status=0x1d : statusType=0x9: Program Inference error" UserInfo={NSLocalizedDescription=processRequest:model:qos:qIndex:modelStringID:options:returnValue:error:: ANEProgramProcessRequestDirect() Failed with status=0x1d : statusType=0x9: Program Inference error}
+  input exact, output exact        65536     65536     65536     65536     65536       OK
+      numeric check over 32768 elems: PASS (max |diff| = 0)
+  input 2x,    output exact        65536    131072    131072     65536     65536       OK
+      numeric check over 32768 elems: PASS (max |diff| = 0)
+  input exact, output 0.5x         65536     65536     65536     32768     32768     FAIL
+      rejected: Error Domain=com.apple.appleneuralengine Code=8 "processRequest:model:qos:qIndex:modelStringID:options:returnValue:error:: ANEProgramProcessRequestDirect() Failed with status=0x1d : statusType=0x9: Program Inference error" UserInfo={NSLocalizedDescription=processRequest:model:qos:qIndex:modelStringID:options:returnValue:error:: ANEProgramProcessRequestDirect() Failed with status=0x1d : statusType=0x9: Program Inference error}
+  input exact, output 2x           65536     65536     65536    131072    131072       OK
+      numeric check over 32768 elems: PASS (max |diff| = 0)
+
+all expected cases passed

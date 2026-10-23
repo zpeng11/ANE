@@ -1,0 +1,10 @@
+program(1.3)
+[buildInfo = dict<string, string>({{"coremlc-component-MIL", "3510.2.1"}, {"coremlc-version", "3505.4.1"}, {"coremltools-component-milinternal", ""}, {"coremltools-version", "9.0"}})]
+{
+    func main<ios18>(tensor<fp16, [1, 3, 32, 32]> x) {
+        tensor<int32, [8]> pd = const()[name = string("pd"), val = tensor<int32, [8]>([0, 0, 0, 0, 1, 1, 1, 1])];
+        string md = const()[name = string("md"), val = string("replicate")];
+        fp16 cv = const()[name = string("cv"), val = fp16(0x0p0)];
+        tensor<fp16, [1, 3, 34, 34]> out = pad(x = x, pad = pd, mode = md, constant_val = cv)[name = string("out")];
+    } -> (out);
+}

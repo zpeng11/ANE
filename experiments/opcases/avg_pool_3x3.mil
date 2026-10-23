@@ -1,0 +1,13 @@
+program(1.3)
+[buildInfo = dict<string, string>({{"coremlc-component-MIL", "3510.2.1"}, {"coremlc-version", "3505.4.1"}, {"coremltools-component-milinternal", ""}, {"coremltools-version", "9.0"}})]
+{
+    func main<ios18>(tensor<fp16, [1, 3, 32, 32]> x) {
+        tensor<int32, [2]> ks = const()[name = string("ks"), val = tensor<int32, [2]>([3, 3])];
+        tensor<int32, [2]> st = const()[name = string("st"), val = tensor<int32, [2]>([2, 2])];
+        string pt = const()[name = string("pt"), val = string("valid")];
+        tensor<int32, [4]> pd = const()[name = string("pd"), val = tensor<int32, [4]>([0, 0, 0, 0])];
+        bool cm = const()[name = string("cm"), val = bool(false)];
+        bool ep = const()[name = string("ep"), val = bool(false)];
+        tensor<fp16, [1, 3, 15, 15]> out = avg_pool(x = x, kernel_sizes = ks, strides = st, pad_type = pt, pad = pd, ceil_mode = cm, exclude_padding_from_average = ep)[name = string("out")];
+    } -> (out);
+}

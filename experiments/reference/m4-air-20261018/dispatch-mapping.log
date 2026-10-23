@@ -1,0 +1,10 @@
+=== decomposing the per-eval overhead ===
+surface bytes = channels * align64(spatial*2); timing only, evals checked
+  A) trivial, 1 output, no premap        logical=    512 need= 16384 alloc=  16384  207.00 us/eval (2000/2000 OK)
+  B) trivial, 1 output, premap           logical=    512 need= 16384 alloc=  16384  159.09 us/eval (2000/2000 OK)
+  C) trivial, 2 outputs                  logical=    512 need= 16384 alloc=  16384  170.56 us/eval (2000/2000 OK)
+  C) trivial, 3 outputs                  logical=    512 need= 16384 alloc=  16384  175.83 us/eval (2000/2000 OK)
+  D) real work, 1 output (768x256)       logical= 393216 need=393216 alloc= 393216  128.58 us/eval (1000/1000 OK)
+  D) real work, 1 output, premap         logical= 393216 need=393216 alloc= 393216  133.61 us/eval (1000/1000 OK)
+
+PASS (0 failing cases)

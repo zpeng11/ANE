@@ -1,0 +1,12 @@
+constexpr_scale_probe self-test (no ANE calls)
+  fp16 chunk at 64, payload at 128                             PASS
+  dtype=1, uint64 size=16, uint64 offset=128                   PASS
+  BLOB file header chunk count = 1 after first put             PASS
+  BLOB chunk count increments to 2 (second chunk at 192)       PASS
+  axis=0 CPU golden W[o,i]=scale*(q-zp)                        PASS
+  affine parameters including axis are in [ ... ]              PASS
+  affine quantized_data is a standard BLOB                     PASS
+  iOS18 scalar affine text                                     PASS
+  blockwise grammar: inputs in ( ... )                         PASS
+  iOS18 LUT grammar: uint4 indices, rank-6 LUT, no shape       PASS
+self-test: PASS

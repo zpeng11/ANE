@@ -1,0 +1,10 @@
+# Local build output
+/build_local/
+
+# Training artifacts generated locally (data and compiled binary)
+/training/tinystories_data00.bin
+/training/training_dynamic/train
+
+# Python cache
+__pycache__/
+*.pyc

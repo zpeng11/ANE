@@ -1,0 +1,38 @@
+# Build output (all probes build into build/)
+/build/
+
+# Run artifacts.  Historical raw results stay on disk but are not tracked.
+/results/
+/survey_results.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Probe binaries if built in the flat tree (historical and current names).
+# Do not use a *.bin blanket: opcases/*.wblob are test fixtures.
+/api_surface
+/compile_limit
+/constexpr_scale_probe
+/cpu_gemm_bench
+/cpuhog
+/devinfo
+/dispatch_floor
+/dispatch_floor2
+/dispatch_latency
+/inmem_peak_spatial
+/int8_decompose
+/int8_quant_probe
+/io_dtype_bench
+/mapping_overhead
+/multi_input
+/multi_input_test2
+/multi_io
+/multi_io_gen
+/op_probe
+/probe_common_selftest
+/shape_test
+/shape_test2
+/static_shape_compile
+/sustained
+/surface_capacity

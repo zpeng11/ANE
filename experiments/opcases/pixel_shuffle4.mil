@@ -1,0 +1,8 @@
+program(1.3)
+[buildInfo = dict<string, string>({{"coremlc-component-MIL", "3510.2.1"}, {"coremlc-version", "3505.4.1"}, {"coremltools-component-milinternal", ""}, {"coremltools-version", "9.0"}})]
+{
+    func main<ios18>(tensor<fp16, [1, 12, 8, 8]> x) {
+        int32 uf = const()[name = string("uf"), val = int32(2)];
+        tensor<fp16, [1, 3, 16, 16]> out = pixel_shuffle(x = x, upscale_factor = uf)[name = string("out")];
+    } -> (out);
+}

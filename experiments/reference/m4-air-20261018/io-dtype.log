@@ -1,0 +1,5 @@
+=== fp32 vs fp16 direct I/O (performance-only; 128x conv 512ch sp64) ===
+
+I/O dtype                 ms/eval    vs fp32
+fp32 in/out (cast)       1.1570 ms    1.000x
+fp16 in/out              1.1456 ms    1.010x

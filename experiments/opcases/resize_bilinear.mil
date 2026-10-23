@@ -1,0 +1,10 @@
+program(1.3)
+[buildInfo = dict<string, string>({{"coremlc-component-MIL", "3510.2.1"}, {"coremlc-version", "3505.4.1"}, {"coremltools-component-milinternal", ""}, {"coremltools-version", "9.0"}})]
+{
+    func main<ios18>(tensor<fp16, [1, 3, 8, 8]> x) {
+        int32 th = const()[name = string("th"), val = int32(16)];
+        int32 tw = const()[name = string("tw"), val = int32(16)];
+        string sm = const()[name = string("sm"), val = string("DEFAULT")];
+        tensor<fp16, [1, 3, 16, 16]> out = resize_bilinear(x = x, target_size_height = th, target_size_width = tw, sampling_mode = sm)[name = string("out")];
+    } -> (out);
+}

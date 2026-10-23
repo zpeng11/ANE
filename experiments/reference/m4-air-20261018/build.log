@@ -1,0 +1,1 @@
+xcrun clang -O2 -fobjc-arc -framework Foundation -framework IOSurface -ldl -o int8_quant_probe int8_quant_probe.m

@@ -1,0 +1,10 @@
+test_compile_rejection_is_an_observation (__main__.SurveyProtocolTests.test_compile_rejection_is_an_observation) ... ok
+test_inconsistent_exit_codes_fail (__main__.SurveyProtocolTests.test_inconsistent_exit_codes_fail) ... ok
+test_runtime_and_numerical_failures_are_not_success (__main__.SurveyProtocolTests.test_runtime_and_numerical_failures_are_not_success) ... ok
+test_success (__main__.SurveyProtocolTests.test_success) ... ok
+test_unverified_layout_requires_explicit_opt_in (__main__.SurveyProtocolTests.test_unverified_layout_requires_explicit_opt_in) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 5.363s
+
+OK

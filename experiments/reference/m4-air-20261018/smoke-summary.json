@@ -1,0 +1,73 @@
+[
+  {
+    "name": "quant-selftest",
+    "command": [
+      "./int8_quant_probe",
+      "--selftest"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-10-18T18:08:48.381979+08:00",
+    "log": "quant-selftest.log"
+  },
+  {
+    "name": "weight-selftest",
+    "command": [
+      "./constexpr_scale_probe",
+      "--selftest"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-10-18T18:08:48.387956+08:00",
+    "log": "weight-selftest.log"
+  },
+  {
+    "name": "cpu-gemm",
+    "command": [
+      "./cpu_gemm_bench"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-10-18T18:08:48.393809+08:00",
+    "log": "cpu-gemm.log"
+  },
+  {
+    "name": "sustained-smoke",
+    "command": [
+      "./sustained",
+      "512",
+      "64",
+      "16",
+      "100",
+      "50"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-10-18T18:08:49.310152+08:00",
+    "log": "sustained-smoke.log"
+  },
+  {
+    "name": "capacity-smoke",
+    "command": [
+      "./compile_limit",
+      "5"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-10-18T18:08:49.909439+08:00",
+    "log": "capacity-smoke.log"
+  },
+  {
+    "name": "io-dtype",
+    "command": [
+      "./io_dtype_bench"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-10-18T18:08:50.644365+08:00",
+    "log": "io-dtype.log"
+  },
+  {
+    "name": "int8-decompose",
+    "command": [
+      "./int8_decompose"
+    ],
+    "exit_code": 0,
+    "started_at": "2026-10-18T18:08:52.205446+08:00",
+    "log": "int8-decompose.log"
+  }
+]

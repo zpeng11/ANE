@@ -1,0 +1,14 @@
+  aneSubType                       = h16
+  aneSubTypeVariant                = g
+  aneSubTypeProductVariant         =
+  aneArchitectureType              = h16g
+  numANEs                          = 1
+  numANECores                      = 16
+  hasANE                           = 1
+  productName                      = macOS
+  buildVersion                     = 25D2128
+  isVirtualMachine                 = 0
+  aneBoardType                     = 256
+  isInternalBuild                  = 0
+  isExcessivePowerDrainWhenIdle    = 0
+  precompiledModelChecksDisabled   = 0

@@ -1,0 +1,3 @@
+=== ANE per-process compile+load+eval probe (max 5, retain=no) ===
+c+l+e 1 ok
+RESULT: 5 successful compiles before failure/limit

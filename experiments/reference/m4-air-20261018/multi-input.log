@@ -1,0 +1,7 @@
+=== multi-input request probe with CPU goldens ===
+  1-input, no weights, nil weightsArg      PASS (descriptor nil as expected)
+  1-input, no weights, {} weightsArg       PASS (max |ANE - CPU| = 0)
+  2-input, no weights, {} weightsArg       PASS (max |ANE - CPU| = 0)
+  2-input + BLOBFILE weights (conv)        PASS (max |ANE - CPU| = 0)
+
+PASS (0 failing cases)

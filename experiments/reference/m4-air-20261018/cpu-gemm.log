@@ -1,0 +1,6 @@
+=== Accelerate sgemm throughput ===
+case                                 ms     GFLOPS  eff/NEON
+W1/W3 dW  (2048x256 @ 768)       1.034     778.6     278.1
+W2 dW     (768x256 @ 2048)       0.691    1165.3     416.2
+Wq/Wk/Wv/Wo dW (768x256 @ 768)   0.219    1379.3     492.6
+square 2048                     10.934    1571.3     561.2

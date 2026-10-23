@@ -1,0 +1,15 @@
+timestamp=20261018T093920Z
+mode=run
+probe=./op_probe
+cases=76
+csv=${EXPERIMENTS}/results/20261018-release/survey_results.csv
+errors=${EXPERIMENTS}/results/20261018-release/survey/survey_errors.log
+stdout=${EXPERIMENTS}/results/20261018-release/survey/stdout
+layouts=align64
+dump=0
+allow_unverified=0
+numeric_fail=0
+numeric_unverified=0
+layout_candidate=0
+infra_fail=0
+exit=0

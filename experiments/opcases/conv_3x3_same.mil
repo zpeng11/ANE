@@ -1,0 +1,13 @@
+program(1.3)
+[buildInfo = dict<string, string>({{"coremlc-component-MIL", "3510.2.1"}, {"coremlc-version", "3505.4.1"}, {"coremltools-component-milinternal", ""}, {"coremltools-version", "9.0"}})]
+{
+    func main<ios18>(tensor<fp16, [1, 3, 32, 32]> x) {
+        tensor<int32, [2]> dl = const()[name = string("dl"), val = tensor<int32, [2]>([1, 1])];
+        int32 gp = const()[name = string("gp"), val = int32(1)];
+        tensor<int32, [4]> pd = const()[name = string("pd"), val = tensor<int32, [4]>([0, 0, 0, 0])];
+        string pt = const()[name = string("pt"), val = string("same")];
+        tensor<int32, [2]> st = const()[name = string("st"), val = tensor<int32, [2]>([1, 1])];
+        tensor<fp16, [4, 3, 3, 3]> W = const()[name = string("W"), val = tensor<fp16, [4, 3, 3, 3]>(BLOBFILE(path = string("@model_path/weights/weight.bin"), offset = uint64(64)))];
+        tensor<fp16, [1, 4, 32, 32]> out = conv(dilations = dl, groups = gp, pad = pd, pad_type = pt, strides = st, weight = W, x = x)[name = string("out")];
+    } -> (out);
+}

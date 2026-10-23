@@ -1,0 +1,7 @@
+=== INT8 W8A8 decomposition (performance-only; 128x conv 512ch 64x64) ===
+
+variant                         ms/eval      TOPS   vs base
+a) fp16 W + fp16 A              14.90 ms    18.45     1.00x
+b) int8 W + fp16 A              14.85 ms    18.51     1.00x
+c) fp16 W + int8 A              14.90 ms    18.45     1.00x
+d) int8 W + int8 A (W8A8)        7.93 ms    34.66     1.88x

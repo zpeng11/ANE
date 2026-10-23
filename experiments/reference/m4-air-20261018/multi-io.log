@@ -1,0 +1,5 @@
+compiled+loaded: a[1,1,64,64] * b[1,1,64,96] -> (y,z)[1,1,64,96]
+surfaces requested/alloc: a=8192/8192 B b=12288/12288 B y=12288/12288 B z=12288/12288 B
+output y: max |ANE - CPU| = 0  -> PASS
+output z: max |ANE - CPU| = 0  -> PASS
+PASS

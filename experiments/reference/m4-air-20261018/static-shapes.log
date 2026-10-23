@@ -1,0 +1,13 @@
+=== static-shape compile+load cost (fresh MIL + v2 blob per case) ===
+channels=512, depth=8 conv layers, deterministic weights
+
+  shape          compile+load   status
+  [1,512,1,16  ]      51.0 ms       OK
+  [1,512,1,32  ]      44.8 ms       OK
+  [1,512,1,64  ]      44.4 ms       OK
+  [1,512,1,128 ]      45.2 ms       OK
+  [1,512,1,256 ]      48.4 ms       OK
+  [1,512,1,512 ]      45.2 ms       OK
+  [1,512,1,1024]      46.1 ms       OK
+
+7/7 shapes compiled and loaded

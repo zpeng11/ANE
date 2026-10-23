@@ -79,6 +79,12 @@ A from-scratch implementation of transformer training (forward + backward pass) 
 
 INT8 activations halve L2 SRAM bandwidth between tiles via MIL `quantize`/`dequantize` ops. Weights use `constexpr_affine_dequantize` (int8 stored, fp16 at compile time).
 
+### Inference-only verification probes (optional)
+
+The [`experiments/`](experiments/README.md) directory contains independent, opt-in probes for the private in-memory **inference** path: operator acceptance and selected numerical checks, INT8 quantize/dequantize semantics, IOSurface layout and capacity, multi-input/output handling, and per-call dispatch overhead. They are separate from the training and benchmark results in this README.
+
+Usage is documented in [experiments/README.md](experiments/README.md); measured evidence and tested-host/shape limits are in [experiments/M4AIR_FINDINGS.md](experiments/M4AIR_FINDINGS.md). The W8A8 speedup pattern reported above is reproduced there under a separate harness, not newly discovered.
+
 ## Architecture
 
 The dynamic pipeline uses shared ANE kernels with weights packed into spatial dimensions (no recompilation when weights change):
@@ -123,6 +129,7 @@ Key optimizations:
 │   ├── ane_bridge.h            # C-callable ANE API (compile, eval, I/O)
 │   ├── ane_bridge.m            # Bridge implementation (int8 + fp16 weight blobs)
 │   └── Makefile
+├── experiments/                # Optional inference-only probes (see experiments/README.md)
 └── training/
     ├── ane_runtime.h           # ANE private API wrapper (compile, eval, IOSurface)
     ├── ane_classifier.h        # Classifier fwd (32K conv), softmax, rmsnorm on ANE
